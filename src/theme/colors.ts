@@ -19,7 +19,10 @@ export const palette = {
 const theme = {
   ...palette,
   primary: palette.purplePrimary,
-  primaryContrast: palette.grayWhite,
+  primaryContrast: palette.blackSecondary,
+
+  background: palette.grayWhite,
+  backgroundContrast: palette.blackSecondary,
 
   buttonPrimary: palette.purplePrimary,
 
