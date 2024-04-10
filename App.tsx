@@ -1,17 +1,15 @@
-import {Text} from '@components';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {ThemeProvider} from '@shopify/restyle';
 import React from 'react';
-import {View} from 'react-native';
 import {theme} from '@theme';
+import {OnboardingScreen} from '@screens';
 
 export function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text semiBold preset="headingLarge">
-          teste
-        </Text>
-      </View>
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <OnboardingScreen />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

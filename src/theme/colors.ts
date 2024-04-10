@@ -1,6 +1,6 @@
 export const palette = {
   purplePrimary: '#6B55FD',
-  blackSecondary: '#302F36',
+  blackSecondary: '#303134',
 
   redError: '#EA3838',
 
