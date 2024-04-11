@@ -1,34 +1,66 @@
-import {Box, BoxProps} from '@components';
-import {useAppSafeArea} from '@hooks';
 import React from 'react';
-import {KeyboardAvoidingView, Platform, ViewStyle} from 'react-native';
+import {KeyboardAvoidingView, Platform} from 'react-native';
+import {ScreenHeader, ScrollViewContainer, ViewContainer} from './components';
+import {useAppTheme, useAppSafeArea} from '@hooks';
+import {Box, BoxProps} from '@components';
 
-interface ScreenProps extends BoxProps {
+export interface ScreenProps extends BoxProps {
   children: React.ReactNode;
+  scrollable?: boolean;
+  noHeader?: boolean;
   noPaddingHorizontal?: boolean;
+  noPaddingBottom?: boolean;
+  headerComponent?: React.ReactNode;
+  title?: string;
+  canGoBack?: boolean;
 }
 
 export function Screen({
   children,
-  noPaddingHorizontal,
+  scrollable = false,
+  noPaddingHorizontal = false,
+  noPaddingBottom = false,
+  canGoBack = false,
+  style,
+  headerComponent,
+  title,
+  backgroundColor,
   ...boxProps
 }: ScreenProps) {
+  const {colors} = useAppTheme();
   const {top, bottom} = useAppSafeArea();
+  const Container = scrollable ? ScrollViewContainer : ViewContainer;
+
+  const canHeader = !!title || !!headerComponent || canGoBack;
+  const background = backgroundColor
+    ? colors[backgroundColor]
+    : colors.background;
+
   return (
     <KeyboardAvoidingView
-      style={$wrapperFlex}
+      style={{flex: 1}}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <Box
-        paddingHorizontal={noPaddingHorizontal ? undefined : 's25'}
-        backgroundColor="background"
-        style={[$wrapperFlex, {paddingTop: top, paddingBottom: bottom}]}
-        {...boxProps}>
-        {children}
-      </Box>
+      <Container backgroundColor={background}>
+        <Box
+          flex={1}
+          paddingHorizontal={noPaddingHorizontal ? undefined : 's25'}
+          style={{
+            paddingTop: top,
+            paddingBottom: noPaddingBottom ? undefined : bottom,
+          }}>
+          {canHeader && (
+            <ScreenHeader
+              canGoBack={canGoBack}
+              title={title}
+              headerComponent={headerComponent}
+              paddingHorizontal={noPaddingHorizontal ? 's25' : undefined}
+            />
+          )}
+          <Box flex={1} style={style} {...boxProps}>
+            {children}
+          </Box>
+        </Box>
+      </Container>
     </KeyboardAvoidingView>
   );
 }
-
-const $wrapperFlex: ViewStyle = {
-  flex: 1,
-};

@@ -1,11 +1,14 @@
 import React from 'react';
-import {CloudySunIcon} from '../../assets/icons/CloudSunIcon';
 import {ThemeColors} from '@theme';
 import {Pressable} from 'react-native';
 import {useAppTheme} from '@hooks';
 
+import {CloudySunIcon} from '../../assets/icons/CloudSunIcon';
+import {ReturnIcon} from '../../assets/icons/ReturnIcon';
+
 const iconRegistry = {
   cloudySun: CloudySunIcon,
+  return: ReturnIcon,
 };
 
 type IconNames = keyof typeof iconRegistry;

@@ -1,6 +1,7 @@
 export const palette = {
-  purplePrimary: '#6B55FD',
-  blackSecondary: '#303134',
+  bluePrimary: '#2F2E84',
+  blackPrimary: '#303134',
+  yellowPrimary: '#FDB926',
 
   redError: '#EA3838',
 
@@ -18,13 +19,11 @@ export const palette = {
 
 const theme = {
   ...palette,
-  primary: palette.purplePrimary,
-  primaryContrast: palette.blackSecondary,
+  primary: palette.bluePrimary,
+  primaryContrast: palette.grayWhite,
 
   background: palette.grayWhite,
-  backgroundContrast: palette.blackSecondary,
-
-  buttonPrimary: palette.purplePrimary,
+  backgroundContrast: palette.grayBlack,
 
   error: palette.redError,
 };

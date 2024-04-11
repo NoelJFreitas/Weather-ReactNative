@@ -6,7 +6,7 @@ import {TextStyle} from 'react-native';
 const RSTExt = createText<Theme>();
 type RSTextProps = React.ComponentProps<typeof RSTExt>;
 
-interface TextProps extends RSTextProps {
+export interface TextProps extends RSTextProps {
   preset?: TextVariants;
   bold?: boolean;
   semiBold?: boolean;
@@ -15,8 +15,9 @@ interface TextProps extends RSTextProps {
 }
 
 export function Text({
-  children,
   preset = 'paragraphMedium',
+  color = 'backgroundContrast',
+  children,
   bold,
   semiBold,
   medium,
@@ -27,7 +28,7 @@ export function Text({
   const fontFamily = getFontFamily(bold, semiBold, medium, extraBold);
   return (
     <RSTExt
-      color="backgroundContrast"
+      color={color}
       style={[$fontSizes[preset], {fontFamily}, style]}
       {...textProps}>
       {children}
@@ -46,7 +47,7 @@ type TextVariants =
   | 'paragraphCaptionSmall';
 
 export const $fontSizes: Record<TextVariants, TextStyle> = {
-  headingLarge: {fontSize: 32, lineHeight: 38.4, color: 'black'},
+  headingLarge: {fontSize: 32, lineHeight: 38.4},
   headingMedium: {fontSize: 22, lineHeight: 26.4},
   headingSmall: {fontSize: 18, lineHeight: 23.4},
 
