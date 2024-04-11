@@ -1,6 +1,6 @@
 import React from 'react';
-
 import {Box, BoxProps, Icon, ScreenProps, Text} from '@components';
+import {Platform} from 'react-native';
 // import {useNavigation} from '@react-navigation/native';
 
 type ScreenHeaderProps = Pick<
@@ -20,7 +20,11 @@ export function ScreenHeader({
   // const goBack = () => navigation.goBack();
 
   return (
-    <Box flexDirection="row" mb={headerShow ? 's25' : undefined} {...boxProps}>
+    <Box
+      flexDirection="row"
+      mt={Platform.OS === 'android' ? 's10' : undefined}
+      mb={headerShow ? 's25' : undefined}
+      {...boxProps}>
       {canGoBack && <Icon name="return" />}
       {title && (
         <Box flex={1} alignItems="center" mr={canGoBack ? 's25' : undefined}>
