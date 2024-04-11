@@ -5,10 +5,12 @@ import {useAppTheme} from '@hooks';
 
 import {CloudySunIcon} from '../../assets/icons/CloudSunIcon';
 import {ReturnIcon} from '../../assets/icons/ReturnIcon';
+import {SearchIcon} from '../../assets/icons/SearchIcon';
 
 const iconRegistry = {
   cloudySun: CloudySunIcon,
   return: ReturnIcon,
+  search: SearchIcon,
 };
 
 type IconNames = keyof typeof iconRegistry;

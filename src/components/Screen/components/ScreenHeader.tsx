@@ -24,7 +24,9 @@ export function ScreenHeader({
       {canGoBack && <Icon name="return" />}
       {title && (
         <Box flex={1} alignItems="center" mr={canGoBack ? 's25' : undefined}>
-          <Text>{title}</Text>
+          <Text bold color="primary">
+            {title}
+          </Text>
         </Box>
       )}
       {headerComponent}

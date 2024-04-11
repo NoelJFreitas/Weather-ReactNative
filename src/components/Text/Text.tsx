@@ -12,11 +12,13 @@ export interface TextProps extends RSTextProps {
   semiBold?: boolean;
   medium?: boolean;
   extraBold?: boolean;
+  isColored?: boolean;
 }
 
 export function Text({
   preset = 'paragraphMedium',
-  color = 'backgroundContrast',
+  color,
+  isColored,
   children,
   bold,
   semiBold,
@@ -26,10 +28,16 @@ export function Text({
   ...textProps
 }: TextProps) {
   const fontFamily = getFontFamily(bold, semiBold, medium, extraBold);
+  const textColor: TextProps['color'] = color
+    ? color
+    : isColored
+    ? 'primary'
+    : 'backgroundContrast';
+
   return (
     <RSTExt
-      color={color}
       style={[$fontSizes[preset], {fontFamily}, style]}
+      color={textColor}
       {...textProps}>
       {children}
     </RSTExt>

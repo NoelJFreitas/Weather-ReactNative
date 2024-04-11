@@ -1,10 +1,14 @@
 import React from 'react';
-import {Screen, Text} from '@components';
+import {CityCard, Screen, Search, Text} from '@components';
 
 export function CitiesScreen() {
   return (
-    <Screen canGoBack>
-      <Text>Cities</Text>
+    <Screen title="Escolha sua cidade" canGoBack>
+      <Search placeholder="Qual a sua cidade?" />
+      <Text marginVertical="s15" isColored>
+        Cities
+      </Text>
+      <CityCard />
     </Screen>
   );
 }
