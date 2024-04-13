@@ -1,24 +1,34 @@
 import {Box, BoxProps, Icon} from '@components';
 import {useAppTheme} from '@hooks';
 import {$shadowProps} from '@theme';
-import React from 'react';
-import {
-  TextInput as RNTextInput,
-  TextInputProps,
-  TextStyle,
-} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {TextInput as RNTextInput, TextStyle} from 'react-native';
 
-interface SearchProps extends TextInputProps {
+interface SearchProps extends BoxProps {
   boxPros?: BoxProps;
+  onSearch: (text: string) => void;
+  placeholder?: string;
 }
 
-export function Search({boxPros, ...textInputProps}: SearchProps) {
+export function Search({onSearch, placeholder, ...boxPros}: SearchProps) {
+  const [search, setSearch] = useState('');
+
   const {spacing} = useAppTheme();
   const $textInputStyle: TextStyle = {
     height: '100%',
     flex: 1,
     paddingLeft: spacing.s10,
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (search !== '') {
+        onSearch(search);
+      }
+    }, 500);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
 
   return (
     <Box
@@ -31,7 +41,12 @@ export function Search({boxPros, ...textInputProps}: SearchProps) {
       style={$shadowProps}
       {...boxPros}>
       <Icon name="search" />
-      <RNTextInput style={$textInputStyle} {...textInputProps} />
+      <RNTextInput
+        value={search}
+        onChangeText={setSearch}
+        style={$textInputStyle}
+        placeholder={placeholder}
+      />
     </Box>
   );
 }

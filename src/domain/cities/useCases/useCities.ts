@@ -9,7 +9,10 @@ interface Variables {
 
 export function useCities(options?: MutationOptions<City[]>) {
   const mutation = useMutation<City[], Error, Variables>({
-    mutationFn: ({cityName}) => citiesService.getCityByName(cityName),
+    mutationFn: ({cityName}) => {
+      console.log('rodou');
+      return citiesService.getCityByName(cityName);
+    },
     retry: false,
     onError: error => console.log(error),
     onSuccess: cities => {

@@ -5,3 +5,5 @@ export * from './Icon/Icon';
 export * from './Button/Button';
 export * from './Search/Search';
 export * from './CityCard/CityCard';
+export * from './ActivityIndicator/ActivityIndicator';
+export * from './FlatList/FlatList';
