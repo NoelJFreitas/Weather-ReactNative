@@ -4,12 +4,18 @@ import React from 'react';
 import {theme} from '@theme';
 import {CitiesScreen} from '@screens';
 
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
+
 export function App() {
   return (
     <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <CitiesScreen />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <CitiesScreen />
+        </ThemeProvider>
+      </QueryClientProvider>
     </SafeAreaProvider>
   );
 }
