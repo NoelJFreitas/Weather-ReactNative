@@ -1,11 +1,13 @@
 export const palette = {
-  bluePrimary: '#2F2E84',
-  blackPrimary: '#303134',
+  // bluePrimary: '#185489',
+  blackPrimary: '#1B1D1F',
   yellowPrimary: '#FDB926',
+
+  blueLight: '#AAC7E1',
 
   redError: '#EA3838',
 
-  grayBlack: '#000000',
+  grayBlack: '#212329',
   black60: 'rgba(0,0,0,0.6)',
   gray1: '#484848',
   gray2: '#606060',
@@ -19,11 +21,11 @@ export const palette = {
 
 const theme = {
   ...palette,
-  primary: palette.bluePrimary,
+  primary: palette.yellowPrimary,
   primaryContrast: palette.grayWhite,
 
-  background: palette.grayWhite,
-  backgroundContrast: palette.grayBlack,
+  background: palette.blackPrimary,
+  backgroundContrast: palette.grayWhite,
 
   error: palette.redError,
 };

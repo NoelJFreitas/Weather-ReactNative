@@ -10,6 +10,7 @@ export interface ScreenProps extends BoxProps {
   noHeader?: boolean;
   noPaddingHorizontal?: boolean;
   noPaddingBottom?: boolean;
+  noPaddingTop?: boolean;
   headerComponent?: React.ReactNode;
   title?: string;
   canGoBack?: boolean;
@@ -20,6 +21,7 @@ export function Screen({
   scrollable = false,
   noPaddingHorizontal = false,
   noPaddingBottom = false,
+  noPaddingTop = false,
   canGoBack = false,
   style,
   headerComponent,
@@ -45,7 +47,7 @@ export function Screen({
           flex={1}
           paddingHorizontal={noPaddingHorizontal ? undefined : 's25'}
           style={{
-            paddingTop: top,
+            paddingTop: noPaddingTop ? undefined : top,
             paddingBottom: noPaddingBottom ? undefined : bottom,
           }}>
           {canHeader && (

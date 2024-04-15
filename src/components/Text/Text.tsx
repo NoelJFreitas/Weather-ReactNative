@@ -12,27 +12,23 @@ export interface TextProps extends RSTextProps {
   semiBold?: boolean;
   medium?: boolean;
   extraBold?: boolean;
-  isColored?: boolean;
+  thin?: boolean;
 }
 
 export function Text({
   preset = 'paragraphMedium',
   color,
-  isColored,
   children,
   bold,
   semiBold,
   medium,
+  thin,
   extraBold,
   style,
   ...textProps
 }: TextProps) {
-  const fontFamily = getFontFamily(bold, semiBold, medium, extraBold);
-  const textColor: TextProps['color'] = color
-    ? color
-    : isColored
-    ? 'primary'
-    : 'backgroundContrast';
+  const fontFamily = getFontFamily(bold, semiBold, medium, extraBold, thin);
+  const textColor: TextProps['color'] = color ? color : 'backgroundContrast';
 
   return (
     <RSTExt
@@ -45,6 +41,7 @@ export function Text({
 }
 
 type TextVariants =
+  | 'headingExtraLarge'
   | 'headingLarge'
   | 'headingMedium'
   | 'headingSmall'
@@ -55,6 +52,7 @@ type TextVariants =
   | 'paragraphCaptionSmall';
 
 export const $fontSizes: Record<TextVariants, TextStyle> = {
+  headingExtraLarge: {fontSize: 55},
   headingLarge: {fontSize: 32, lineHeight: 38.4},
   headingMedium: {fontSize: 22, lineHeight: 26.4},
   headingSmall: {fontSize: 18, lineHeight: 23.4},
@@ -84,6 +82,7 @@ function getFontFamily(
   semiBold?: boolean,
   medium?: boolean,
   extraBold?: boolean,
+  thin?: boolean,
 ) {
   switch (true) {
     case bold:
@@ -94,6 +93,8 @@ function getFontFamily(
       return $fontFamily.medium;
     case extraBold:
       return $fontFamily.extraBold;
+    case thin:
+      return $fontFamily.thin;
     default:
       return $fontFamily.regular;
   }

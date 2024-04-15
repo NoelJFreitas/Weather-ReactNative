@@ -1,8 +1,8 @@
-import {Box, BoxProps, Icon} from '@components';
-import {useAppTheme} from '@hooks';
-import {$shadowProps} from '@theme';
 import React, {useEffect, useState} from 'react';
 import {TextInput as RNTextInput, TextStyle} from 'react-native';
+
+import {Box, BoxProps, Icon} from '@components';
+import {useAppTheme} from '@hooks';
 
 interface SearchProps extends BoxProps {
   boxPros?: BoxProps;
@@ -12,12 +12,13 @@ interface SearchProps extends BoxProps {
 
 export function Search({onSearch, placeholder, ...boxPros}: SearchProps) {
   const [search, setSearch] = useState('');
+  const {spacing, colors} = useAppTheme();
 
-  const {spacing} = useAppTheme();
   const $textInputStyle: TextStyle = {
     height: '100%',
     flex: 1,
     paddingLeft: spacing.s10,
+    color: colors.backgroundContrast,
   };
 
   useEffect(() => {
@@ -37,12 +38,13 @@ export function Search({onSearch, placeholder, ...boxPros}: SearchProps) {
       borderRadius="s15"
       paddingHorizontal="s15"
       alignItems="center"
-      backgroundColor="background"
-      style={$shadowProps}
+      backgroundColor="grayBlack"
+      // style={$shadowProps}
       {...boxPros}>
-      <Icon name="search" />
+      <Icon name="search" color="backgroundContrast" />
       <RNTextInput
         value={search}
+        placeholderTextColor={colors.backgroundContrast}
         onChangeText={setSearch}
         style={$textInputStyle}
         placeholder={placeholder}

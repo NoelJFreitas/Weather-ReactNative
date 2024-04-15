@@ -17,7 +17,7 @@ export function CitiesScreen() {
         marginHorizontal="s25"
         onSearch={t => getCities({cityName: t})}
       />
-      <Text marginVertical="s15" isColored marginHorizontal="s25">
+      <Text marginVertical="s15" marginHorizontal="s25">
         Cities
       </Text>
       <FlatList
