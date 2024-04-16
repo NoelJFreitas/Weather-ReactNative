@@ -1,11 +1,13 @@
 import React from 'react';
-import {ImageStyle, Image as RNImage} from 'react-native';
+import {Image as RNImage} from 'react-native';
 
-import {Box} from '@components';
 import {images} from '@assets';
 
 const imagesRegistry = {
-  cloudWithRays: images.cloudWithRays,
+  rays: images.rays,
+  sun: images.sun,
+  cloudy: images.cloudy,
+  lightningRain: images.lightningRain,
 };
 
 export type ImagesName = keyof typeof imagesRegistry;
@@ -18,8 +20,6 @@ interface ImageProps {
 export function Image({name, size}: ImageProps) {
   return (
     <RNImage
-      height={size}
-      width={size}
       source={imagesRegistry[name]}
       style={{height: size, width: size}}
       resizeMode="contain"

@@ -3,16 +3,18 @@ import {ThemeColors} from '@theme';
 import {Pressable} from 'react-native';
 import {useAppTheme} from '@hooks';
 
-import {CloudySunIcon} from '../../assets/icons/CloudSunIcon';
 import {ReturnIcon} from '../../assets/icons/ReturnIcon';
 import {SearchIcon} from '../../assets/icons/SearchIcon';
-import {MoonIcon} from '../../assets/icons/MoonIcon';
+import {WindIcon} from '../../assets/icons/WindIcon';
+import {DropIcon} from '../../assets/icons/DropsIcon';
+import {RainIcon} from '../../assets/icons/RainIcon';
 
 const iconRegistry = {
-  cloudySun: CloudySunIcon,
   return: ReturnIcon,
   search: SearchIcon,
-  moon: MoonIcon,
+  wind: WindIcon,
+  drop: DropIcon,
+  rain: RainIcon,
 };
 
 type IconNames = keyof typeof iconRegistry;
