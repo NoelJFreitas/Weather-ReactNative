@@ -8,3 +8,5 @@ export * from './CityCard/CityCard';
 export * from './ActivityIndicator/ActivityIndicator';
 export * from './FlatList/FlatList';
 export * from './Image/Image';
+export * from './ClimateSpecifications/ClimateSpecifications';
+export * from './WeatherNow/WeatherNow';

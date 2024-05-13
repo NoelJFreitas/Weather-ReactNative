@@ -1,6 +1,7 @@
 export const images = {
   rays: require('./images/rays.png'),
-  sun: require('./images/sun.png'),
+  sunny: require('./images/sunny.png'),
   cloudy: require('./images/cloudy.png'),
-  lightningRain: require('./images/lightningRain.png'),
+  storm: require('./images/storm.png'),
+  rain: require('./images/rain.png'),
 };

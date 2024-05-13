@@ -5,7 +5,7 @@ export function OnboardingScreen() {
   return (
     <Screen justifyContent="center" flex={1}>
       <Box mb="s60" alignItems="center">
-        <Image name="cloudWithRays" size={250} />
+        <Image name="rays" size={250} />
       </Box>
 
       <Text bold preset="headingLarge" color="yellowPrimary">

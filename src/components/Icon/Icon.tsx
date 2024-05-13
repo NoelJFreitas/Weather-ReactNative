@@ -17,7 +17,7 @@ const iconRegistry = {
   rain: RainIcon,
 };
 
-type IconNames = keyof typeof iconRegistry;
+export type IconNames = keyof typeof iconRegistry;
 export interface IconBase {
   size?: number;
   color?: string;

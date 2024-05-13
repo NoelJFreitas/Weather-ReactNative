@@ -5,9 +5,10 @@ import {images} from '@assets';
 
 const imagesRegistry = {
   rays: images.rays,
-  sun: images.sun,
+  sunny: images.sunny,
   cloudy: images.cloudy,
-  lightningRain: images.lightningRain,
+  storm: images.storm,
+  rain: images.rain,
 };
 
 export type ImagesName = keyof typeof imagesRegistry;
