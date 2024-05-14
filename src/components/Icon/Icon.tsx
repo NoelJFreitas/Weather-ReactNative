@@ -8,6 +8,12 @@ import {SearchIcon} from '../../assets/icons/SearchIcon';
 import {WindIcon} from '../../assets/icons/WindIcon';
 import {DropIcon} from '../../assets/icons/DropsIcon';
 import {RainIcon} from '../../assets/icons/RainIcon';
+import {LocationOutlineIcon} from '../../assets/icons/LocationOutlineIcon';
+import {LocationIcon} from '../../assets/icons/LocationIcon';
+import {PointIcon} from '../../assets/icons/PointIcon';
+import {PointOutlineIcon} from '../../assets/icons/PointOutlineIcon';
+import {UserIcon} from '../../assets/icons/UserIcon';
+import {UserOutlineIcon} from '../../assets/icons/UserOutlineIcon';
 
 const iconRegistry = {
   return: ReturnIcon,
@@ -15,6 +21,12 @@ const iconRegistry = {
   wind: WindIcon,
   drop: DropIcon,
   rain: RainIcon,
+  location: LocationIcon,
+  locationOutline: LocationOutlineIcon,
+  point: PointIcon,
+  pointOutline: PointOutlineIcon,
+  user: UserIcon,
+  userOutline: UserOutlineIcon,
 };
 
 export type IconNames = keyof typeof iconRegistry;
@@ -23,7 +35,7 @@ export interface IconBase {
   color?: string;
 }
 
-interface IconProps {
+export interface IconProps {
   name: IconNames;
   size?: number;
   color?: ThemeColors;

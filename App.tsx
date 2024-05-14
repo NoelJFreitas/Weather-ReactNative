@@ -2,9 +2,9 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {ThemeProvider} from '@shopify/restyle';
 import React from 'react';
 import {theme} from '@theme';
-import {CitiesScreen, WeatherScreen} from '@screens';
 
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import {Router} from '@routes';
 
 const queryClient = new QueryClient();
 
@@ -13,7 +13,7 @@ export function App() {
     <SafeAreaProvider>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          <CitiesScreen />
+          <Router />
         </ThemeProvider>
       </QueryClientProvider>
     </SafeAreaProvider>
