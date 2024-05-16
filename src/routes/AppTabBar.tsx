@@ -74,7 +74,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
 const $boxWrapper: BoxProps = {
   backgroundColor: 'grayBlack',
   flexDirection: 'row',
-  paddingTop: 's40',
+  paddingTop: 's20',
 };
 
 const $itemWrapper: TouchableOpacityBoxProps = {

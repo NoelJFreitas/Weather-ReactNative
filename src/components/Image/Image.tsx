@@ -2,8 +2,10 @@ import React from 'react';
 import {Image as RNImage} from 'react-native';
 
 import {images} from '@assets';
+import {Box, BoxProps} from '@components';
+import {ClimateTypes} from 'src/types/climate';
 
-const imagesRegistry = {
+const imagesRegistry: Record<ClimateTypes, any> = {
   rays: images.rays,
   sunny: images.sunny,
   cloudy: images.cloudy,
@@ -13,17 +15,19 @@ const imagesRegistry = {
 
 export type ImagesName = keyof typeof imagesRegistry;
 
-interface ImageProps {
+interface ImageProps extends BoxProps {
   name: ImagesName;
   size?: number;
 }
 
-export function Image({name, size}: ImageProps) {
+export function Image({name, size, ...boxProps}: ImageProps) {
   return (
-    <RNImage
-      source={imagesRegistry[name]}
-      style={{height: size, width: size}}
-      resizeMode="contain"
-    />
+    <Box {...boxProps}>
+      <RNImage
+        source={imagesRegistry[name]}
+        style={{height: size, width: size}}
+        resizeMode="contain"
+      />
+    </Box>
   );
 }

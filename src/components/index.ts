@@ -10,3 +10,5 @@ export * from './FlatList/FlatList';
 export * from './Image/Image';
 export * from './ClimateSpecifications/ClimateSpecifications';
 export * from './WeatherNow/WeatherNow';
+export * from './HourlyWeather/HourlyWeather';
+export * from './ForecastNextDays/ForecastNextDays';

@@ -29,10 +29,10 @@ export const theme = createTheme({
 });
 
 export const $shadowProps: ViewStyle = {
-  elevation: 10,
-  shadowColor: '#000',
+  elevation: 5,
+  shadowColor: '#fff',
   shadowOpacity: 0.06,
-  shadowRadius: 12,
+  shadowRadius: 10,
   shadowOffset: {width: 0, height: -3},
 };
 

@@ -1,6 +1,6 @@
 export const palette = {
   // bluePrimary: '#185489',
-  blackPrimary: '#1B1D1F',
+  blackPrimary: '#1b1d1f',
   yellowPrimary: '#FDB926',
 
   blueLight: '#AAC7E1',
@@ -15,7 +15,7 @@ export const palette = {
   gray4: '#919191',
   gray5: '#C2C2C2',
   gray6: '#DADADA',
-  grayWhite: '#FFFFFF',
+  grayWhite: '#f3f3f3',
   white70: 'rgba(255,255,255,0.7)',
 };
 
