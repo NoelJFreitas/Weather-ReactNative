@@ -31,7 +31,9 @@ const weatherTypes: Record<WeatherTypes, {image: ImagesName; name: string}> = {
 export function WeatherNow({city, temperature, weather}: WeatherNowProps) {
   return (
     <Box>
-      <Text bold>{city}</Text>
+      <Text preset="headingSmall" bold>
+        {city}
+      </Text>
       <Text semiBold color="gray4" preset="paragraphCaption">
         15 de março, segunda.
       </Text>

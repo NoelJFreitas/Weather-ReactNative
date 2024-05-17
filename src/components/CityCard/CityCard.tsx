@@ -11,7 +11,7 @@ export function CityCard({city, ...touchableOpacityBoxProps}: CityCardProps) {
   return (
     <TouchableOpacityBox
       height={70}
-      backgroundColor="background"
+      backgroundColor="grayBlack"
       style={$shadowProps}
       borderRadius="s15"
       paddingHorizontal="s15"

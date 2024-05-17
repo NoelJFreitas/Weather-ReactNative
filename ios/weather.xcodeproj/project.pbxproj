@@ -12,15 +12,17 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		59EF0A602BCB51980010A42D /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D75C2BBCF06B006D5146 /* Inter-Black.ttf */; };
-		59EF0A612BCB51980010A42D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D75F2BBCF06C006D5146 /* Inter-Bold.ttf */; };
-		59EF0A622BCB51980010A42D /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D7592BBCF06B006D5146 /* Inter-ExtraBold.ttf */; };
-		59EF0A632BCB51980010A42D /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D7602BBCF06C006D5146 /* Inter-ExtraLight.ttf */; };
-		59EF0A642BCB51980010A42D /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D75E2BBCF06C006D5146 /* Inter-Light.ttf */; };
-		59EF0A652BCB51980010A42D /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D75B2BBCF06B006D5146 /* Inter-Medium.ttf */; };
-		59EF0A662BCB51980010A42D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D7582BBCF06B006D5146 /* Inter-Regular.ttf */; };
-		59EF0A672BCB51980010A42D /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D75D2BBCF06C006D5146 /* Inter-SemiBold.ttf */; };
-		59EF0A682BCB51980010A42D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59A2D75A2BBCF06B006D5146 /* Inter-Thin.ttf */; };
+		596597C42BF697E100B08421 /* ChakraPetch-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597BA2BF697E000B08421 /* ChakraPetch-Bold.ttf */; };
+		596597C52BF697E100B08421 /* ChakraPetch-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597BB2BF697E000B08421 /* ChakraPetch-MediumItalic.ttf */; };
+		596597C62BF697E100B08421 /* ChakraPetch-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597BC2BF697E000B08421 /* ChakraPetch-Light.ttf */; };
+		596597C72BF697E100B08421 /* ChakraPetch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597BD2BF697E000B08421 /* ChakraPetch-Medium.ttf */; };
+		596597C82BF697E100B08421 /* ChakraPetch-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597BE2BF697E000B08421 /* ChakraPetch-Italic.ttf */; };
+		596597C92BF697E100B08421 /* ChakraPetch-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597BF2BF697E000B08421 /* ChakraPetch-BoldItalic.ttf */; };
+		596597CA2BF697E100B08421 /* ChakraPetch-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597C02BF697E000B08421 /* ChakraPetch-LightItalic.ttf */; };
+		596597CB2BF697E100B08421 /* ChakraPetch-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597C12BF697E100B08421 /* ChakraPetch-Regular.ttf */; };
+		596597CC2BF697E100B08421 /* ChakraPetch-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597C22BF697E100B08421 /* ChakraPetch-SemiBold.ttf */; };
+		596597CD2BF697E100B08421 /* ChakraPetch-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597C32BF697E100B08421 /* ChakraPetch-SemiBoldItalic.ttf */; };
+		596597CF2BF697F900B08421 /* RussoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596597CE2BF697F900B08421 /* RussoOne-Regular.ttf */; };
 		7F8C5928CBD95B5DCC1EC790 /* libPods-weather-weatherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E495C748E51E2976676455E /* libPods-weather-weatherTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -48,15 +50,17 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = weather/main.m; sourceTree = "<group>"; };
 		2B558494F715CA2B92A55500 /* Pods-weather-weatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-weatherTests.release.xcconfig"; path = "Target Support Files/Pods-weather-weatherTests/Pods-weather-weatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E495C748E51E2976676455E /* libPods-weather-weatherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weather-weatherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59A2D7582BBCF06B006D5146 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
-		59A2D7592BBCF06B006D5146 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
-		59A2D75A2BBCF06B006D5146 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
-		59A2D75B2BBCF06B006D5146 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
-		59A2D75C2BBCF06B006D5146 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
-		59A2D75D2BBCF06C006D5146 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
-		59A2D75E2BBCF06C006D5146 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
-		59A2D75F2BBCF06C006D5146 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		59A2D7602BBCF06C006D5146 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		596597BA2BF697E000B08421 /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
+		596597BB2BF697E000B08421 /* ChakraPetch-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-MediumItalic.ttf"; sourceTree = "<group>"; };
+		596597BC2BF697E000B08421 /* ChakraPetch-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Light.ttf"; sourceTree = "<group>"; };
+		596597BD2BF697E000B08421 /* ChakraPetch-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Medium.ttf"; sourceTree = "<group>"; };
+		596597BE2BF697E000B08421 /* ChakraPetch-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Italic.ttf"; sourceTree = "<group>"; };
+		596597BF2BF697E000B08421 /* ChakraPetch-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-BoldItalic.ttf"; sourceTree = "<group>"; };
+		596597C02BF697E000B08421 /* ChakraPetch-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-LightItalic.ttf"; sourceTree = "<group>"; };
+		596597C12BF697E100B08421 /* ChakraPetch-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Regular.ttf"; sourceTree = "<group>"; };
+		596597C22BF697E100B08421 /* ChakraPetch-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBold.ttf"; sourceTree = "<group>"; };
+		596597C32BF697E100B08421 /* ChakraPetch-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		596597CE2BF697F900B08421 /* RussoOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RussoOne-Regular.ttf"; sourceTree = "<group>"; };
 		71721C55AE220A93F70B14A8 /* Pods-weather-weatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-weatherTests.debug.xcconfig"; path = "Target Support Files/Pods-weather-weatherTests/Pods-weather-weatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = weather/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FCB43DF4BF2FF7E9FEE40F4 /* libPods-weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,15 +132,17 @@
 		59A2D7572BBCF048006D5146 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				59A2D75C2BBCF06B006D5146 /* Inter-Black.ttf */,
-				59A2D75F2BBCF06C006D5146 /* Inter-Bold.ttf */,
-				59A2D7592BBCF06B006D5146 /* Inter-ExtraBold.ttf */,
-				59A2D7602BBCF06C006D5146 /* Inter-ExtraLight.ttf */,
-				59A2D75E2BBCF06C006D5146 /* Inter-Light.ttf */,
-				59A2D75B2BBCF06B006D5146 /* Inter-Medium.ttf */,
-				59A2D7582BBCF06B006D5146 /* Inter-Regular.ttf */,
-				59A2D75D2BBCF06C006D5146 /* Inter-SemiBold.ttf */,
-				59A2D75A2BBCF06B006D5146 /* Inter-Thin.ttf */,
+				596597BA2BF697E000B08421 /* ChakraPetch-Bold.ttf */,
+				596597BF2BF697E000B08421 /* ChakraPetch-BoldItalic.ttf */,
+				596597BE2BF697E000B08421 /* ChakraPetch-Italic.ttf */,
+				596597BC2BF697E000B08421 /* ChakraPetch-Light.ttf */,
+				596597C02BF697E000B08421 /* ChakraPetch-LightItalic.ttf */,
+				596597BD2BF697E000B08421 /* ChakraPetch-Medium.ttf */,
+				596597BB2BF697E000B08421 /* ChakraPetch-MediumItalic.ttf */,
+				596597C12BF697E100B08421 /* ChakraPetch-Regular.ttf */,
+				596597CE2BF697F900B08421 /* RussoOne-Regular.ttf */,
+				596597C22BF697E100B08421 /* ChakraPetch-SemiBold.ttf */,
+				596597C32BF697E100B08421 /* ChakraPetch-SemiBoldItalic.ttf */,
 			);
 			name = fonts;
 			sourceTree = "<group>";
@@ -276,17 +282,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59EF0A602BCB51980010A42D /* Inter-Black.ttf in Resources */,
-				59EF0A612BCB51980010A42D /* Inter-Bold.ttf in Resources */,
-				59EF0A622BCB51980010A42D /* Inter-ExtraBold.ttf in Resources */,
-				59EF0A632BCB51980010A42D /* Inter-ExtraLight.ttf in Resources */,
-				59EF0A642BCB51980010A42D /* Inter-Light.ttf in Resources */,
-				59EF0A652BCB51980010A42D /* Inter-Medium.ttf in Resources */,
-				59EF0A662BCB51980010A42D /* Inter-Regular.ttf in Resources */,
-				59EF0A672BCB51980010A42D /* Inter-SemiBold.ttf in Resources */,
-				59EF0A682BCB51980010A42D /* Inter-Thin.ttf in Resources */,
+				596597C92BF697E100B08421 /* ChakraPetch-BoldItalic.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				596597CB2BF697E100B08421 /* ChakraPetch-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				596597C72BF697E100B08421 /* ChakraPetch-Medium.ttf in Resources */,
+				596597C82BF697E100B08421 /* ChakraPetch-Italic.ttf in Resources */,
+				596597C52BF697E100B08421 /* ChakraPetch-MediumItalic.ttf in Resources */,
+				596597C42BF697E100B08421 /* ChakraPetch-Bold.ttf in Resources */,
+				596597CA2BF697E100B08421 /* ChakraPetch-LightItalic.ttf in Resources */,
+				596597C62BF697E100B08421 /* ChakraPetch-Light.ttf in Resources */,
+				596597CD2BF697E100B08421 /* ChakraPetch-SemiBoldItalic.ttf in Resources */,
+				596597CF2BF697F900B08421 /* RussoOne-Regular.ttf in Resources */,
+				596597CC2BF697E100B08421 /* ChakraPetch-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PXQUTHG9GG;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,6 +532,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.weatherappnoel;
 				PRODUCT_NAME = weather;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -537,6 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PXQUTHG9GG;
 				INFOPLIST_FILE = weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +560,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.weatherappnoel;
 				PRODUCT_NAME = weather;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -624,10 +636,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -695,10 +704,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

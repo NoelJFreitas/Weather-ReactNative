@@ -47,7 +47,7 @@ export function ForecastNextDays({...boxProps}: ForecastNextDaysProps) {
   return (
     <Box {...boxProps}>
       <Text mb="s20" preset="paragraphSmall" semiBold>
-        Próximos 10 Dias
+        Próximos 7 Dias
       </Text>
       {teste.map(({dia}, i) => {
         return <ForecastNextDayCard key={i.toString()} day={dia} />;

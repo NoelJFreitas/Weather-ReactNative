@@ -22,12 +22,11 @@ export function Text({
   bold,
   semiBold,
   medium,
-  thin,
-  extraBold,
+
   style,
   ...textProps
 }: TextProps) {
-  const fontFamily = getFontFamily(bold, semiBold, medium, extraBold, thin);
+  const fontFamily = getFontFamily(preset, bold, semiBold, medium);
   const textColor: TextProps['color'] = color ? color : 'backgroundContrast';
 
   return (
@@ -66,24 +65,23 @@ export const $fontSizes: Record<TextVariants, TextStyle> = {
 };
 
 export const $fontFamily = {
-  black: 'Inter-Black',
-  bold: 'Inter-Bold',
-  extraBold: 'Inter-ExtraBold',
-  light: 'Inter-Light',
-  extraLight: 'Inter-ExtraLight',
-  medium: 'Inter-Medium',
-  semiBold: 'Inter-SemiBold',
-  thin: 'Inter-Thin',
-  regular: 'Inter-Regular',
+  bold: 'ChakraPetch-Bold',
+  light: 'ChakraPetch-Light',
+  medium: 'ChakraPetch-Medium',
+  semiBold: 'ChakraPetch-SemiBold',
+  regular: 'ChakraPetch-Regular',
 };
 
 function getFontFamily(
+  preset: TextVariants,
   bold?: boolean,
   semiBold?: boolean,
   medium?: boolean,
-  extraBold?: boolean,
-  thin?: boolean,
 ) {
+  if (preset.includes('heading')) {
+    return 'RussoOne-Regular';
+  }
+
   switch (true) {
     case bold:
       return $fontFamily.bold;
@@ -91,10 +89,6 @@ function getFontFamily(
       return $fontFamily.semiBold;
     case medium:
       return $fontFamily.medium;
-    case extraBold:
-      return $fontFamily.extraBold;
-    case thin:
-      return $fontFamily.thin;
     default:
       return $fontFamily.regular;
   }
