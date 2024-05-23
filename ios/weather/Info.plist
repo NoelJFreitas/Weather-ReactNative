@@ -31,8 +31,11 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+		<string>Necessário ter acesso à sua localização.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>Necessário ter acesso à sua localização.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ChakraPetch-Bold.ttf</string>

@@ -10,7 +10,7 @@ import {
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {mapScreenToProps} from './mapScreenToProps';
-import {AppTabBottomTabParamList} from './AppTabNavigator';
+import {AppTabParamList} from './AppTabNavigator';
 import {useAppSafeArea} from '@hooks';
 import {$shadowProps} from '@theme';
 
@@ -23,8 +23,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
         const {options} = descriptors[route.key];
 
         const isFocused = state.index === index;
-        const tabItem =
-          mapScreenToProps[route.name as keyof AppTabBottomTabParamList];
+        const tabItem = mapScreenToProps[route.name as keyof AppTabParamList];
 
         const onPress = () => {
           const event = navigation.emit({

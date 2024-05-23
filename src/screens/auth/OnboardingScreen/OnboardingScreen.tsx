@@ -1,7 +1,13 @@
 import React from 'react';
 import {Box, Button, Image, Screen, Text} from '@components';
+import {useAuthenticationService} from '@services';
 
 export function OnboardingScreen() {
+  const setUserIsLogged = useAuthenticationService();
+  function navigateToAppScreens() {
+    setUserIsLogged(true);
+  }
+
   return (
     <Screen justifyContent="center" flex={1}>
       <Box mb="s60" alignItems="center">
@@ -20,7 +26,11 @@ export function OnboardingScreen() {
         descubra!
       </Text>
 
-      <Button preset="secondary" title="Próximo" />
+      <Button
+        preset="secondary"
+        title="Acessar"
+        onPress={navigateToAppScreens}
+      />
     </Screen>
   );
 }

@@ -5,6 +5,7 @@ import {theme} from '@theme';
 
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {Router} from '@routes';
+import {CoordinatesProvider} from '@services';
 
 const queryClient = new QueryClient();
 
@@ -13,7 +14,9 @@ export function App() {
     <SafeAreaProvider>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          <Router />
+          <CoordinatesProvider>
+            <Router />
+          </CoordinatesProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </SafeAreaProvider>
