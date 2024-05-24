@@ -1,4 +1,6 @@
+import React from 'react';
 import {
+  ActivityIndicator,
   Box,
   ClimateSpecifications,
   ForecastNextDays,
@@ -6,9 +8,27 @@ import {
   Screen,
   WeatherNow,
 } from '@components';
-import React from 'react';
+import {useForecast} from '@domain';
+import {useCoordinates} from '@services';
 
 export function WeatherScreen() {
+  const {coordinates} = useCoordinates();
+  const {isLoading, forecast} = useForecast(coordinates);
+
+  if (isLoading || forecast === undefined) {
+    return (
+      <Box
+        flex={1}
+        backgroundColor="background"
+        justifyContent="center"
+        alignItems="center">
+        <ActivityIndicator />
+      </Box>
+    );
+  }
+
+  console.log(JSON.stringify(forecast));
+
   return (
     <Screen scrollable noPaddingHorizontal>
       <Box paddingHorizontal="s25">

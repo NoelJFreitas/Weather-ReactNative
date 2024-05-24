@@ -1,2 +1,2 @@
 export * from './useCases';
-export * from './weatherTypes';
+export * from './forecastTypes';

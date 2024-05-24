@@ -10,7 +10,7 @@ export const citiesApi = axios.create({
   },
 });
 
-export const weatherApi = axios.create({
+export const forecastApi = axios.create({
   baseURL: WEATHER_BASE_URL,
   params: {
     key: 'd3e5bb9599d64b4c8b9151615241705',

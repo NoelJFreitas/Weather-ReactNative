@@ -1,4 +1,33 @@
-export interface LocationApi {
+export interface CurrentForecast {
+  city: string;
+  region: string;
+  current: {
+    temp: number;
+    condition: string;
+    windSpeed: number;
+    humidity: number;
+    chanceOfRain: number;
+    hourlyForecast: {
+      time: string;
+      temp: number;
+      condition: string;
+    }[];
+  };
+  nextDays: {
+    date: string;
+    maxTemp: number;
+    minTemp: number;
+    condition: string;
+  }[];
+}
+
+export interface ForecastApi {
+  location: CurrentLocationApi;
+  current: CurrentWeatherApi;
+  forecast: ForecastDayApi;
+}
+
+export interface CurrentLocationApi {
   name: string;
   region: string;
   country: string;
@@ -24,7 +53,7 @@ export interface CurrentWeatherApi {
   cloud: number;
 }
 
-export interface ForecastDayApy {
+export interface ForecastDayApi {
   forecastday: {
     date: string;
     day: {
@@ -43,34 +72,5 @@ export interface ForecastDayApy {
         text: string;
       };
     }[];
-  }[];
-}
-
-export interface ForecastApi {
-  location: LocationApi;
-  current: CurrentWeatherApi;
-  forecast: ForecastDayApy;
-}
-
-export interface Weather {
-  city: string;
-  region: string;
-  current: {
-    temp: number;
-    condition: string;
-    windSpeed: number;
-    humidity: number;
-    chanceOfRain: number;
-    hourlyForecast: {
-      time: string;
-      temp: number;
-      condition: string;
-    }[];
-  };
-  nextDays: {
-    date: string;
-    maxTemp: number;
-    minTemp: number;
-    condition: string;
   }[];
 }
