@@ -1,59 +1,31 @@
 import React from 'react';
 
-import {Box, BoxProps} from '@components';
+import {Box, BoxProps, Text} from '@components';
 import {FlatList, ListRenderItemInfo, ViewStyle} from 'react-native';
-import {TabMenu} from './components/TabMenu';
-import {HourlyWeatherType} from '@types';
 import {HourlyCard} from './components/HourlyCard';
+import {HourlyTodayForecast} from '@domain';
 
-const teste: HourlyWeatherType[] = [
-  {
-    hour: '12 am',
-    temperature: '12',
-    climate: 'rain',
-  },
-  {
-    hour: '13 am',
-    temperature: '12',
-    climate: 'storm',
-  },
-  {
-    hour: '14 am',
-    temperature: '12',
-    climate: 'storm',
-  },
-  {
-    hour: '15 am',
-    temperature: '12',
-    climate: 'storm',
-  },
-];
+interface HourlyWeatherProps extends BoxProps {
+  hourlyWeather: HourlyTodayForecast[];
+}
 
-const tabMenu = [
-  {
-    title: 'Hoje',
-    onPress: () => {},
-  },
-  {
-    title: 'Amanhã',
-    onPress: () => {},
-  },
-];
-
-interface HourlyWeatherProps extends BoxProps {}
-
-export function HourlyWeather({...boxProps}: HourlyWeatherProps) {
-  function renderItem({item}: ListRenderItemInfo<HourlyWeatherType>) {
-    return <HourlyCard climate={item} />;
+export function HourlyWeather({
+  hourlyWeather,
+  ...boxProps
+}: HourlyWeatherProps) {
+  function renderItem({item}: ListRenderItemInfo<HourlyTodayForecast>) {
+    return <HourlyCard weather={item} />;
   }
 
   return (
     <Box {...boxProps}>
-      <TabMenu items={tabMenu} />
+      <Text mb="s20" preset="paragraphSmall" semiBold>
+        Previsão por hora
+      </Text>
       <FlatList
-        keyExtractor={({hour}) => hour}
+        keyExtractor={({time}) => time}
         contentContainerStyle={$flatList}
-        data={teste}
+        data={hourlyWeather}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={renderItem}

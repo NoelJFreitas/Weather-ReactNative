@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ActivityIndicator,
   Box,
-  ClimateSpecifications,
+  WeatherSpecifications,
   ForecastNextDays,
   HourlyWeather,
   Screen,
@@ -27,23 +27,21 @@ export function WeatherScreen() {
     );
   }
 
-  console.log(JSON.stringify(forecast));
-
   return (
     <Screen scrollable noPaddingHorizontal>
       <Box paddingHorizontal="s25">
-        <WeatherNow temperature={28} city="Vitoria" weather="storm" />
-        <ClimateSpecifications
-          indices={{wind: '10', humidity: '98', rain: '85'}}
+        <WeatherNow weather={forecast.current} />
+        <WeatherSpecifications
+          weather={forecast.current}
           marginVertical="s15"
           mb="s30"
         />
       </Box>
       <Box paddingLeft="s25">
-        <HourlyWeather mb="s40" />
+        <HourlyWeather hourlyWeather={forecast.hourlyToday} mb="s40" />
       </Box>
       <Box paddingHorizontal="s25">
-        <ForecastNextDays mb="s30" />
+        <ForecastNextDays nextDays={forecast.nextDays} mb="s30" />
       </Box>
     </Screen>
   );

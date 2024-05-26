@@ -1,6 +1,7 @@
 import React from 'react';
-import {Box, Button, Image, Screen, Text} from '@components';
+import {Box, Button, Screen, Text} from '@components';
 import {useAuthenticationService} from '@services';
+import {Image} from 'react-native';
 
 export function OnboardingScreen() {
   const setUserIsLogged = useAuthenticationService();
@@ -8,10 +9,12 @@ export function OnboardingScreen() {
     setUserIsLogged(true);
   }
 
+  const image = require('../../../assets/images/rays.png');
+
   return (
     <Screen justifyContent="center" flex={1}>
       <Box mb="s60" alignItems="center">
-        <Image name="rays" size={250} />
+        <Image source={image} style={{height: 250, width: 250}} />
       </Box>
 
       <Text bold preset="headingLarge" color="yellowPrimary">

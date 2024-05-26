@@ -1,41 +1,21 @@
-import {Box, Image, ImagesName, Text} from '@components';
+import {Box, ForecastImage, ImagesCode, Text} from '@components';
+import {CurrentForecast} from '@domain';
+import {useDate} from '@hooks';
 import React from 'react';
 
-type WeatherTypes = 'cloudy' | 'rain' | 'storm' | 'sunny';
-
 interface WeatherNowProps {
-  weather: WeatherTypes;
-  city: string;
-  temperature: number;
+  weather: CurrentForecast['current'];
 }
 
-const weatherTypes: Record<WeatherTypes, {image: ImagesName; name: string}> = {
-  rain: {
-    image: 'rain',
-    name: 'Chuvoso',
-  },
-  cloudy: {
-    image: 'cloudy',
-    name: 'Nublado',
-  },
-  sunny: {
-    image: 'sunny',
-    name: 'Ensolarado',
-  },
-  storm: {
-    image: 'storm',
-    name: 'Tempestade',
-  },
-};
-
-export function WeatherNow({city, temperature, weather}: WeatherNowProps) {
+export function WeatherNow({weather}: WeatherNowProps) {
+  const {formatToISOString} = useDate(weather.date);
   return (
     <Box>
       <Text preset="headingSmall" bold>
-        {city}
+        {weather.city}
       </Text>
       <Text semiBold color="gray4" preset="paragraphCaption">
-        15 de março, segunda.
+        {formatToISOString()}
       </Text>
       <Box
         flexDirection="row"
@@ -43,13 +23,17 @@ export function WeatherNow({city, temperature, weather}: WeatherNowProps) {
         alignItems="center">
         <Box>
           <Text bold preset="headingExtraLarge">
-            {`${temperature}°`}
+            {`${weather.temp}°`}
           </Text>
           <Text semiBold color="gray4" preset="paragraphCaption">
-            {weatherTypes[weather].name}
+            {weather.condition}
           </Text>
         </Box>
-        <Image name={weatherTypes[weather].image} size={110} />
+        <ForecastImage
+          imageCode={weather.iconCode as ImagesCode}
+          isDay={weather.isDay}
+          size={110}
+        />
       </Box>
     </Box>
   );

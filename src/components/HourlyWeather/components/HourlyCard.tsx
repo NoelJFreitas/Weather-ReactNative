@@ -1,12 +1,14 @@
-import {Box, Image, Text} from '@components';
+import {Box, ForecastImage, ImagesCode, Text} from '@components';
 import React from 'react';
-import {HourlyWeatherType} from '@types';
+import {HourlyTodayForecast} from '@domain';
+import {useDate} from '@hooks';
 
 export interface HourlyWeatherCard {
-  climate: HourlyWeatherType;
+  weather: HourlyTodayForecast;
 }
 
-export function HourlyCard({climate}: HourlyWeatherCard) {
+export function HourlyCard({weather}: HourlyWeatherCard) {
+  const {getHour} = useDate(weather.time);
   return (
     <Box
       backgroundColor="grayBlack"
@@ -14,10 +16,15 @@ export function HourlyCard({climate}: HourlyWeatherCard) {
       paddingHorizontal="s25"
       paddingVertical="s10"
       borderRadius="s15">
-      <Text>{climate.hour}</Text>
-      <Image name={climate.climate} size={40} paddingVertical="s6" />
+      <Text>{getHour()}</Text>
+      <ForecastImage
+        imageCode={weather.iconCode as ImagesCode}
+        isDay={weather.isDay}
+        size={40}
+        boxProps={{paddingVertical: 's6'}}
+      />
       <Text preset="paragraphMedium" bold>
-        {climate.temperature}
+        {weather.temp + '°'}
       </Text>
     </Box>
   );
