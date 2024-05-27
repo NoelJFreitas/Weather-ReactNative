@@ -7,6 +7,7 @@ import {
   HourlyWeather,
   Screen,
   WeatherNow,
+  Text,
 } from '@components';
 import {useForecast} from '@domain';
 import {useCoordinates} from '@services';
@@ -15,7 +16,7 @@ export function WeatherScreen() {
   const {coordinates} = useCoordinates();
   const {isLoading, forecast} = useForecast(coordinates);
 
-  if (isLoading || forecast === undefined) {
+  if (isLoading || !forecast) {
     return (
       <Box
         flex={1}
@@ -23,6 +24,20 @@ export function WeatherScreen() {
         justifyContent="center"
         alignItems="center">
         <ActivityIndicator />
+      </Box>
+    );
+  }
+
+  if (!coordinates) {
+    return (
+      <Box
+        flex={1}
+        backgroundColor="background"
+        justifyContent="center"
+        alignItems="center">
+        <Text paddingHorizontal="s15" textAlign="center">
+          Escolha uma cidade para ter acesso ao dados
+        </Text>
       </Box>
     );
   }

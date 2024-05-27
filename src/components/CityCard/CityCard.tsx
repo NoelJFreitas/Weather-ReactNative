@@ -1,13 +1,14 @@
-import {Text, TouchableOpacityBox, TouchableOpacityBoxProps} from '@components';
+import {Text, TouchableOpacityBox} from '@components';
 import {City} from '@domain';
 import {$shadowProps} from '@theme';
 import React from 'react';
 
-interface CityCardProps extends TouchableOpacityBoxProps {
+interface CityCardProps {
   city: City;
+  onPress: (lat: number, long: number) => void;
 }
 
-export function CityCard({city, ...touchableOpacityBoxProps}: CityCardProps) {
+export function CityCard({city, onPress}: CityCardProps) {
   return (
     <TouchableOpacityBox
       height={70}
@@ -16,7 +17,7 @@ export function CityCard({city, ...touchableOpacityBoxProps}: CityCardProps) {
       borderRadius="s15"
       paddingHorizontal="s15"
       justifyContent="center"
-      {...touchableOpacityBoxProps}>
+      onPress={() => onPress(city.lat, city.long)}>
       <Text preset="paragraphCaption" semiBold>
         {city.name} - {city.country}
       </Text>

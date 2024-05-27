@@ -3,6 +3,7 @@ import Geolocation from '@react-native-community/geolocation';
 
 import {Coordinates, CoordinatesService} from '../coordinatesTypes';
 import {usePermission} from '@services';
+import {coordinatesStorage} from '../coordinatesStorage';
 
 export const CoordinatesContext = createContext<CoordinatesService>({
   coordinates: null,
@@ -14,35 +15,44 @@ export function CoordinatesProvider({children}: React.PropsWithChildren<{}>) {
   const permission = usePermission('location_when_in_use');
 
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-  function changeCurrentCoordinates(coord: Coordinates) {
+  async function changeCurrentCoordinates(coord: Coordinates) {
     setCoordinates(coord);
+    await coordinatesStorage.set(coord);
   }
 
   async function getCoordinateOfCurrentPosition() {
+    Geolocation.getCurrentPosition(async ({coords}) => {
+      await changeCurrentCoordinates({
+        lat: coords.latitude,
+        long: coords.longitude,
+      });
+    });
+  }
+
+  async function verifyCoordinatesStorage() {
     try {
       setIsLoading(true);
-      Geolocation.getCurrentPosition(
-        ({coords}) => {
-          setCoordinates({lat: coords.latitude, long: coords.longitude});
-          setIsLoading(false);
-        },
-        error => {
-          console.log(error);
-          setIsLoading(false);
-        },
-      );
+      const coord = await coordinatesStorage.get();
+      if (coord) {
+        setCoordinates(coord);
+        return;
+      }
+      if (permission.status === 'granted') {
+        await getCoordinateOfCurrentPosition();
+      }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   useEffect(() => {
-    if (permission.status === 'granted') {
-      getCoordinateOfCurrentPosition();
-    }
-  }, [permission.status]);
+    verifyCoordinatesStorage().catch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <CoordinatesContext.Provider

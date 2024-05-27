@@ -10,7 +10,6 @@ interface Variables {
 export function useCities(options?: MutationOptions<City[]>) {
   const mutation = useMutation<City[], Error, Variables>({
     mutationFn: ({cityName}) => {
-      console.log('rodou');
       return citiesService.getCityByName(cityName);
     },
     retry: false,

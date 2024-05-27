@@ -9,7 +9,7 @@ export interface CitiesApi {
 
 export interface City {
   name: string;
-  latitude: number;
-  longitude: number;
+  lat: number;
+  long: number;
   country: string;
 }

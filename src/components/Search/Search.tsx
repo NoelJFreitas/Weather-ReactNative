@@ -39,7 +39,6 @@ export function Search({onSearch, placeholder, ...boxPros}: SearchProps) {
       paddingHorizontal="s15"
       alignItems="center"
       backgroundColor="grayBlack"
-      // style={$shadowProps}
       {...boxPros}>
       <Icon name="search" color="backgroundContrast" />
       <RNTextInput

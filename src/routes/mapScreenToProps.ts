@@ -19,7 +19,7 @@ export const mapScreenToProps: Record<
     },
   },
   WeatherScreen: {
-    label: 'Meu local',
+    label: 'Previsão',
     icon: {
       fill: 'location',
       outline: 'locationOutline',

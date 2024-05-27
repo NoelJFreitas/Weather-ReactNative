@@ -7,8 +7,8 @@ function toCitiesApi(citiesApi: CitiesApi[]): City[] {
     cities.push({
       name: item.name,
       country: item.country,
-      latitude: item.latitude,
-      longitude: item.longitude,
+      lat: item.latitude,
+      long: item.longitude,
     });
   });
 

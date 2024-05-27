@@ -14,7 +14,11 @@ export function OnboardingScreen() {
   return (
     <Screen justifyContent="center" flex={1}>
       <Box mb="s60" alignItems="center">
-        <Image source={image} style={{height: 250, width: 250}} />
+        <Image
+          source={image}
+          resizeMode="contain"
+          style={{height: 250, width: 300}}
+        />
       </Box>
 
       <Text bold preset="headingLarge" color="yellowPrimary">
