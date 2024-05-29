@@ -34,7 +34,7 @@ export function CitiesScreen({navigation}: AppScreenProps<'CitiesScreen'>) {
       />
 
       <Text marginVertical="s15" marginHorizontal="s25">
-        Cities
+        Cidades
       </Text>
       <FlatList
         noPaddingHorizontal

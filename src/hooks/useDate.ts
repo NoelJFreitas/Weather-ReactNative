@@ -1,30 +1,30 @@
+import moment from 'moment-timezone';
+import 'moment/locale/pt-br';
+
 export function useDate(stringDate: string) {
-  const date = new Date(stringDate);
+  const timezoneLocal = moment.tz.guess();
+  const date = moment.tz(stringDate, timezoneLocal).locale('pt-br');
+
+  const weekDays = [
+    'domingo',
+    'segunda-feira',
+    'terça-feira',
+    'quarta-feira',
+    'quinta-feira',
+    'sexta-feira',
+    'sábado',
+  ];
 
   function formatToISOString() {
-    const formattedDate = new Intl.DateTimeFormat('pt-BR', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-    }).format(date);
-    return formattedDate;
+    return date.format('dddd, D [de] MMMM [de] YYYY');
   }
 
   function getDayWeek() {
-    let dayWeek = new Intl.DateTimeFormat('pt-BR', {
-      weekday: 'long',
-    }).format(date);
-    dayWeek = dayWeek[0].toUpperCase() + dayWeek.slice(1);
-    return dayWeek;
+    return weekDays[date.day()];
   }
 
   function getHour() {
-    let hour = new Intl.DateTimeFormat('pt-BR', {
-      hour: '2-digit',
-      minute: '2-digit',
-    }).format(date);
-
-    return hour;
+    return `${date.hour()}:00`;
   }
   return {
     formatToISOString,
