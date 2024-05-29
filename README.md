@@ -1,8 +1,43 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Weather Forecast
 
-# Getting Started
+Aplicativo de previsão do tempo desenvolvido para portfólio. Os dados meteorológicos são obtidos por meio de APIs gratuitas, enquanto as coordenadas geográficas são fornecidas por bibliotecas de geolocalização.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Bibliotecas utilizadas no Desenvolvimento
+
+Para o desenvolvimento do projeto, foram utilizadas as seguintes bibliotecas: Restyle para manter o padrão de design, Zustand para controle de estado, TanStack para gerenciar as chamadas à API, Async Storage para salvar dados localmente e a @react-native-community/geolocation para obter os dados atuais da localização.
+
+- [Restyle](https://shopify.github.io/restyle/)
+- [zustand](https://zustand-demo.pmnd.rs/)
+- [tanstack](https://tanstack.com/query/latest/docs/framework/react/overview)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/)
+- [react-native-community/geolocation](https://github.com/michalchudziak/react-native-geolocation)
+
+## APIs utilizadas
+- Previsão do tempo: https://www.weatherapi.com/
+- Pesquisa de cidades: https://api-ninjas.com/api/city
+
+## Demonstração
+
+Solicitação de permissão
+
+![Solicitação de permissão](https://github.com/NoelJFreitas/weather/assets/102390860/73f6b0ec-1c51-43da-9a32-92678e8901e9)
+
+Onboarding Screen
+
+![page2](https://github.com/NoelJFreitas/weather/assets/102390860/e5617d99-cdee-4bec-9a35-f440d24f4753)
+
+Home - Previsão
+
+![page3](https://github.com/NoelJFreitas/weather/assets/102390860/98d43b1d-647c-49fa-9ef4-1a26987904d1)
+
+Tela de busca de cidades
+
+![page4](https://github.com/NoelJFreitas/weather/assets/102390860/25976f06-ea46-43f7-a92d-62b9cb56c30c)
+![page5](https://github.com/NoelJFreitas/weather/assets/102390860/60a92f46-7d9d-4bfc-8be9-2156c1016c79)
+
+Home após atualização da busca 
+
+![page6](https://github.com/NoelJFreitas/weather/assets/102390860/47293ec1-1358-49f3-a149-16eb7b1e3e9e)
 
 ## Step 1: Start the Metro Server
 
@@ -77,3 +112,4 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
