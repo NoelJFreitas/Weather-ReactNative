@@ -16,7 +16,7 @@ export function useDate(stringDate: string) {
   ];
 
   function formatToISOString() {
-    return date.format('dddd, D [de] MMMM [de] YYYY');
+    return date.format('D [de] MMM. [de] YYYY');
   }
 
   function getDayWeek() {

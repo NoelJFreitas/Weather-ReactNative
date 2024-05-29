@@ -23,7 +23,7 @@ const indexData: Record<
     unit: 'Kph',
   },
   humidity: {
-    title: 'umidade',
+    title: 'Umidade',
     icon: 'drop',
     unit: '%',
   },
