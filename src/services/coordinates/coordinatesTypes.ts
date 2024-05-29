@@ -5,6 +5,7 @@ export interface Coordinates {
 
 export interface CoordinatesService {
   coordinates: Coordinates | null;
-  changeCurrentCoordinates: (coordinates: Coordinates) => void;
+  changeCurrentCoordinates: (coordinates: Coordinates) => Promise<void>;
+  getCoordinateOfCurrentPosition: () => void;
   isLoading: boolean;
 }

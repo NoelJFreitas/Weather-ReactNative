@@ -21,7 +21,7 @@ function toForecastApi(forecastApi: ForecastApi): CurrentForecast {
 
   const nextDayForecast: CurrentForecast['nextDays'] = [];
   forecastApi.forecast.forecastday.map((day, i) => {
-    if (i > 1) {
+    if (i > 0) {
       nextDayForecast.push({
         date: day.date,
         maxTemp: day.day.maxtemp_c,

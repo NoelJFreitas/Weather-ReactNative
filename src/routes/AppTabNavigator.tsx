@@ -37,7 +37,7 @@ export function AppTabNavigator() {
     <Tab.Navigator
       initialRouteName={coordinates !== null ? 'WeatherScreen' : 'CitiesScreen'}
       tabBar={renderTab}
-      screenOptions={{headerShown: false}}>
+      screenOptions={{headerShown: false, tabBarHideOnKeyboard: true}}>
       <Tab.Screen name="CitiesScreen" component={CitiesScreen} />
       <Tab.Screen name="WeatherScreen" component={WeatherScreen} />
       <Tab.Screen name="AccountScreen" component={AccountScreen} />

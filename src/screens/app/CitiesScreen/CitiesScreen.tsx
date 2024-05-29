@@ -7,7 +7,8 @@ import {AppScreenProps} from '@routes';
 
 export function CitiesScreen({navigation}: AppScreenProps<'CitiesScreen'>) {
   const {cities, isLoading, isError, getCities} = useCities({});
-  const {changeCurrentCoordinates} = useCoordinates();
+  const {changeCurrentCoordinates, getCoordinateOfCurrentPosition} =
+    useCoordinates();
 
   function handleSetCoordinates(lat: number, long: number) {
     changeCurrentCoordinates({lat, long});
@@ -18,13 +19,20 @@ export function CitiesScreen({navigation}: AppScreenProps<'CitiesScreen'>) {
     return <CityCard city={item} onPress={handleSetCoordinates} />;
   }
 
+  function getCurrentCoordinates() {
+    getCoordinateOfCurrentPosition();
+    navigation.navigate('WeatherScreen');
+  }
+
   return (
     <Screen title="Escolha sua cidade" noPaddingHorizontal>
       <Search
         placeholder="Qual cidade está procurando?"
         marginHorizontal="s25"
         onSearch={t => getCities({cityName: t})}
+        onPress={getCurrentCoordinates}
       />
+
       <Text marginVertical="s15" marginHorizontal="s25">
         Cities
       </Text>

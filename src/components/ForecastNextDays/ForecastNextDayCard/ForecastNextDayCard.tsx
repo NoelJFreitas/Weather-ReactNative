@@ -15,8 +15,8 @@ export function ForecastNextDayCard({forecast}: ForecastNextDayProps) {
         <Text preset="paragraphSmall">{getDayWeek()}</Text>
       </Box>
       <Box flexDirection="row" flex={2} justifyContent="space-between">
-        <Text color="gray3">18°</Text>
-        <Text>24°</Text>
+        <Text color="gray3">{forecast.minTemp}°</Text>
+        <Text>{forecast.maxTemp}°</Text>
         <ForecastImage
           isDay={true}
           imageCode={forecast.iconCode as ImagesCode}

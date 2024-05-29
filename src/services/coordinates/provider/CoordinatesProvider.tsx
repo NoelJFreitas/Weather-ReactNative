@@ -8,7 +8,8 @@ import {coordinatesStorage} from '../coordinatesStorage';
 export const CoordinatesContext = createContext<CoordinatesService>({
   coordinates: null,
   isLoading: false,
-  changeCurrentCoordinates: () => {},
+  changeCurrentCoordinates: async () => {},
+  getCoordinateOfCurrentPosition: () => {},
 });
 
 export function CoordinatesProvider({children}: React.PropsWithChildren<{}>) {
@@ -18,17 +19,21 @@ export function CoordinatesProvider({children}: React.PropsWithChildren<{}>) {
   const [isLoading, setIsLoading] = useState(false);
 
   async function changeCurrentCoordinates(coord: Coordinates) {
+    console.log(coord);
     setCoordinates(coord);
     await coordinatesStorage.set(coord);
   }
 
-  async function getCoordinateOfCurrentPosition() {
-    Geolocation.getCurrentPosition(async ({coords}) => {
-      await changeCurrentCoordinates({
-        lat: coords.latitude,
-        long: coords.longitude,
-      });
-    });
+  function getCoordinateOfCurrentPosition() {
+    Geolocation.getCurrentPosition(
+      ({coords}) => {
+        changeCurrentCoordinates({
+          lat: coords.latitude,
+          long: coords.longitude,
+        });
+      },
+      err => console.log(err),
+    );
   }
 
   async function verifyCoordinatesStorage() {
@@ -39,6 +44,7 @@ export function CoordinatesProvider({children}: React.PropsWithChildren<{}>) {
         setCoordinates(coord);
         return;
       }
+      console.log(permission.status);
       if (permission.status === 'granted') {
         await getCoordinateOfCurrentPosition();
       }
@@ -50,13 +56,18 @@ export function CoordinatesProvider({children}: React.PropsWithChildren<{}>) {
   }
 
   useEffect(() => {
-    verifyCoordinatesStorage().catch();
+    verifyCoordinatesStorage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [permission.status]);
 
   return (
     <CoordinatesContext.Provider
-      value={{coordinates, changeCurrentCoordinates, isLoading}}>
+      value={{
+        coordinates,
+        changeCurrentCoordinates,
+        getCoordinateOfCurrentPosition,
+        isLoading,
+      }}>
       {children}
     </CoordinatesContext.Provider>
   );
